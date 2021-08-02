@@ -42,7 +42,7 @@ app.post("/", function(req, res) {
             const cloudNumber = weatherData.clouds.all;
             const longitude = weatherData.coord.lon;
             const latitude = weatherData.coord.lat;
-            const weatherIconURL = "http://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@2x.png";
+            const weatherIconURL = "//openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@2x.png";
 
             res.json({temperature, humidity, windSpeed, country, cityName, weatherDescription, pressure, dateTime, weatherIconURL, cloudNumber, latitude, longitude});
         })
