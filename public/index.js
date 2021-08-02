@@ -94,7 +94,7 @@ var getCoords = function () {
 var getWeather = function (northLat, eastLng, southLat, westLng) {
   gettingData = true;
   var requestString =
-    "http://api.openweathermap.org/data/2.5/box/city?bbox=" +
+    "//api.openweathermap.org/data/2.5/box/city?bbox=" +
     westLng +
     "," +
     northLat +
@@ -146,7 +146,7 @@ var jsonToGeoJson = function (weatherItem) {
       windDegrees: weatherItem.wind.deg,
       windGust: weatherItem.wind.gust,
       icon:
-        "http://openweathermap.org/img/w/" +
+        "//openweathermap.org/img/w/" +
         weatherItem.weather[0].icon +
         ".png",
       coordinates: [weatherItem.coord.Lon, weatherItem.coord.Lat],
