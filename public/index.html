@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--STYLESHEET-->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+
+    <!--FAVICONS-->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="img/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>Wezer</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="hero-section">
+        <div class="logo">
+          <h2>Wezer</h2>
+        </div>
+        <div class="hint">
+          <h2 id="hintText">Enter city name in the search bar at the top right of the webpage</h2>
+        </div>
+        <div class="weather-highlight">
+          <div class="temperature">
+            <h1>
+              <span id="temperature-digits"></span
+              ><span class="degree-sign">&#176;</span>C
+            </h1>
+          </div>
+          <div class="locationDiv">
+            <h4><span id="city-name"></span>, <span id="country"></span></h4>
+          </div>
+          <div id="illustration"></div>
+          <div id="date-and-time"></div>
+          <div id="weather-description"></div>
+        </div>
+      </div>
+      <div class="details-section">
+        <div class="location-options">
+          <div class="search-bar">
+            <form method="POST" id="location-form">
+              <input
+                type="text"
+                name="searchLocation"
+                id="searchLocation"
+                placeholder="Enter city name"
+                autocomplete="off"
+              />
+              <button type="submit" id="submit-button">
+                <img src="../img/search icon.svg" alt="search-icon" />
+              </button>
+            </form>
+          </div>
+          <div class="options">
+            <form method="POST" id="suggestions">
+              <button
+                class="suggestion-button"
+                onclick="suggestionClicked(this.innerHTML)"
+                type="button"
+              >San Francisco</button>
+              <button
+                class="suggestion-button"
+                onclick="suggestionClicked(this.innerHTML)"
+                type="button"
+              >London</button>
+              <button
+                class="suggestion-button"
+                onclick="suggestionClicked(this.innerHTML)"
+                type="button"
+              >New York</button>
+              <button
+                class="suggestion-button"
+                onclick="suggestionClicked(this.innerHTML)"
+                type="button"
+              >Tokyo</button>
+            </form>
+          </div>
+        </div>
+        <div class="weather-details">
+          <h3>Weather details</h3>
+          <div class="details-list">
+            <div class="first-column"><p>Cloudiness</p></div>
+            <div class="second-column"><span id="cloud-number"></span> %</div>
+            <div class="first-column"><p>Wind</p></div>
+            <div class="second-column"><span id="wind-speed"></span> m/s</div>
+            <div class="first-column"><p>Humidity</p></div>
+            <div class="second-column"><span id="humidity"></span> %</div>
+            <div class="first-column"><p>Pressure</p></div>
+            <div class="second-column"><span id="pressure"></span> hPa</div>
+            <div class="first-column"><p>Latitude</p></div>
+            <div class="second-column"><span id="latitude"></span></div>
+            <div class="first-column"><p>Longitude</p></div>
+            <div class="second-column"><span id="longitude"></span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="text">
+        <h2>Google Maps</h2>
+        <p>
+          You can also view weather information on the map! Please make sure to
+          zoom in well enough to see what's the weather like in cities. Use Ctrl
+          + Scroll for navigation on the map.
+        </p>
+      </div>
+      <div id="map-canvas"></div>
+    </main>
+    <footer>
+      <div class="text">
+        <h2>About</h2>
+        <p>
+          The webapp shows what's the weather like in cities around the world.
+          It uses
+          <a
+            href="https://developers.google.com/maps/documentation/javascript/overview"
+            >Maps Javascript API</a
+          >
+          to display the map and get weather data using
+          <a href="https://openweathermap.org/api/">Open Weather API</a>.<br />
+          <a href="#">Learn more</a>
+        </p>
+      </div>
+    </footer>
+
+      <!--GOOGLE MAPS-->
+    <script
+    type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3xnaz3VJgyMCc2G2VCCx35RVp92n3fU4"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>

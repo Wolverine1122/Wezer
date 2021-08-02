@@ -1,0 +1,317 @@
+/*-----------------------------------------------*/
+/* VARIABLES */
+/*-----------------------------------------------*/
+
+
+$dark-orange: hsla(22, 100%, 41%, 1);
+$light-orange: hsla(24, 80%, 52%, 1);
+$white-overlay: hsla(192, 15%, 94%, 0.7);
+$white-text: #ECF0F1;
+$light-gray: #BDC3C7;
+$black-overlay: hsla(0, 0, 0, 0.2);
+$white-background: hsl(40, 10%, 90%);
+
+
+/*-----------------------------------------------*/
+/* BASIC SETUP */
+/*-----------------------------------------------*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+body {
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    grid-template-areas: "header"
+                         "map"
+                         "about";
+    background-color: $white-background;
+    letter-spacing: 1px;
+}
+
+
+/*-----------------------------------------------*/
+/* REUSABLES */
+/*-----------------------------------------------*/
+
+
+.lighter-color {
+    color: $light-orange;
+}
+
+.text {
+    width: 60%;
+    margin: 0 auto 30px;
+    line-height: 30px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: $dark-orange;
+        font-size: 2rem;
+    }
+}
+
+main, footer {
+    margin-top: 60px;
+}
+
+.error-message {
+    display: grid;
+    background-color: red;
+    color: $white-text;
+}
+
+/*-----------------------------------------------*/
+/* HEADINGS */
+/*-----------------------------------------------*/
+
+
+h1 {
+    font-weight: 600;
+    font-size: 5rem;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: $dark-orange;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+
+/*-----------------------------------------------*/
+/* FIRST PAGE */
+/*-----------------------------------------------*/
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr -webkit-max-content;
+    grid-template-columns: 1fr max-content;
+    height: 100vh;
+    color: $white-text;
+    background:  linear-gradient($black-overlay, $black-overlay), url(../img/background-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .hero-section {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: "logo"
+                             "hint"
+                            "weather-highlight";
+
+        .logo {
+            grid-area: logo;
+            margin: 30px 0 0 50px;
+        }
+
+        .hint {
+            grid-area: hint;
+            display: grid;
+            align-items: center;
+            margin-bottom: 50px;
+            
+            h2 {
+                color: $white-text;
+                width: 50%;
+                margin: 0 auto;
+            }
+        }
+
+        .weather-highlight {
+            grid-area: weather-highlight;
+            align-self: end;
+            display: none;
+            grid-template-rows: repeat(2, -webkit-max-content);
+            grid-template-rows: repeat(2, max-content);
+            grid-template-columns: repeat(3, -webkit-max-content);
+            grid-template-columns: repeat(3, max-content);
+            grid-template-areas: "temperature   location        illustration"
+                                "temperature   date-and-time   weather-description";
+            grid-column-gap: 30px;
+            margin-left: 50px;
+            margin-bottom: 75px;
+            place-items: center;
+
+            .temperature {
+                grid-area: temperature;
+            }
+
+            .degree-sign {
+                font-size: 3rem;
+                position: relative;
+                bottom: 25px;
+            }
+        }
+        
+    }
+
+    .details-section {
+        display: grid;
+        grid-template-rows: max-content auto;
+        color: $light-orange;
+        background: linear-gradient($white-overlay, $white-overlay);
+        padding: 20px 40px;
+
+        .location-options {
+            border-bottom: 1.5px solid $light-orange;
+            padding-bottom: 50px;
+
+            .search-bar {
+                margin-bottom: 30px;
+                form {
+                    display: grid;
+                    grid-template-columns: auto max-content;
+                }
+                input {
+                    width: 100%;
+                    padding: 5px 5px 5px 0;
+                    border: none;
+                    background: transparent;
+                    border-bottom: 1.5px solid $light-orange;
+                    outline: none;
+                    color: $light-orange;
+                    font-size: 16px;
+                }
+                button {
+                    background: transparent;
+                    border: none;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    img {
+                        width: 20px; 
+                        height: auto;
+                    }
+                }
+
+            }
+            .options {
+                form {
+                    display: grid;
+                    grid-template-rows: repeat(4, auto);
+                    grid-row-gap: 10px;
+
+                    button {
+                        border: 0;
+                        text-align: start;
+                        background: none;
+                        padding: 5px 5px 5px 0;
+                        transition: background-color 0.2s, color 0.2s;
+                        @extend html;
+                        @extend .lighter-color;
+                            &:hover {
+                                cursor: pointer;
+                                background-color: $dark-orange;
+                                color: $white-text;
+                            }
+                    }
+                }   
+            }
+        }
+
+        .weather-details {
+            padding-top: 30px;
+            .details-list {
+                display: grid;
+                grid-template-columns: repeat(2, -webkit-max-content);
+                grid-template-columns: repeat(2, max-content);
+                grid-template-rows: repeat(6, -webkit-max-content);
+                grid-template-rows: repeat(6, max-content);
+                grid-column-gap: 150px;
+                grid-row-gap: 20px;
+                padding-top: 30px;
+                @extend .lighter-color;
+                .second-column {
+                    justify-self: end;
+                }
+            }
+        }
+    }
+}
+
+/* PLACEHOLDER STYLES */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: $dark-orange;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: $dark-orange;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: $dark-orange;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: $dark-orange;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: $dark-orange;
+}
+::placeholder { /* Most modern browsers support this now. */
+   color: $dark-orange;
+}
+
+
+/*-----------------------------------------------*/
+/* SECOND PAGE */
+/*-----------------------------------------------*/
+
+main {
+    grid-area: map;
+
+    #map-canvas {
+        margin: 0 auto;
+        width: 80vw;
+        height: 80vh;
+    }
+    .gm-style-iw {
+        text-align: center;
+    }
+}
+
+
+/*-----------------------------------------------*/
+/* FOOTER */
+/*-----------------------------------------------*/
+footer {
+    grid-area: about;
+    margin-bottom: 50px;
+
+    a {
+        color: $dark-orange;
+    }
+}
+
+
+/*
+font-family: 'Montserrat', sans-serif;
+
+font-weights: 400 Regular
+              500 Medium
+              600 Semi-bold
+*/

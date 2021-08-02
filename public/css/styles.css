@@ -1,0 +1,335 @@
+/*-----------------------------------------------*/
+/* VARIABLES */
+/*-----------------------------------------------*/
+/*-----------------------------------------------*/
+/* BASIC SETUP */
+/*-----------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, header .details-section .location-options .options form button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (max-content)[3];
+      grid-template-rows: repeat(3, -webkit-max-content);
+      grid-template-rows: repeat(3, max-content);
+      grid-template-areas: "header" "map" "about";
+  background-color: #e8e6e3;
+  letter-spacing: 1px;
+}
+
+/*-----------------------------------------------*/
+/* REUSABLES */
+/*-----------------------------------------------*/
+.lighter-color, header .details-section .location-options .options form button, header .details-section .weather-details .details-list {
+  color: #e77123;
+}
+
+.text {
+  width: 60%;
+  margin: 0 auto 30px;
+  line-height: 30px;
+}
+
+.text h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #d14d00;
+  font-size: 2rem;
+}
+
+main, footer {
+  margin-top: 60px;
+}
+
+.error-message {
+  display: -ms-grid;
+  display: grid;
+  background-color: red;
+  color: #ECF0F1;
+}
+
+/*-----------------------------------------------*/
+/* HEADINGS */
+/*-----------------------------------------------*/
+h1 {
+  font-weight: 600;
+  font-size: 5rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #d14d00;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+/*-----------------------------------------------*/
+/* FIRST PAGE */
+/*-----------------------------------------------*/
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  -ms-grid-columns: 1fr max-content;
+      grid-template-columns: 1fr max-content;
+  height: 100vh;
+  color: #ECF0F1;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), url(../img/background-img.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/background-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header .hero-section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "logo" "hint" "weather-highlight";
+}
+
+header .hero-section .logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+  margin: 30px 0 0 50px;
+}
+
+header .hero-section .hint {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: hint;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+header .hero-section .hint h2 {
+  color: #ECF0F1;
+  width: 50%;
+  margin: 0 auto;
+}
+
+header .hero-section .weather-highlight {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: weather-highlight;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  display: none;
+  grid-template-rows: repeat(2, -webkit-max-content);
+  -ms-grid-rows: (max-content)[2];
+      grid-template-rows: repeat(2, max-content);
+  grid-template-columns: repeat(3, -webkit-max-content);
+  -ms-grid-columns: (max-content)[3];
+      grid-template-columns: repeat(3, max-content);
+      grid-template-areas: "temperature   location        illustration" "temperature   date-and-time   weather-description";
+  grid-column-gap: 30px;
+  margin-left: 50px;
+  margin-bottom: 75px;
+  place-items: center;
+}
+
+header .hero-section .weather-highlight .temperature {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: temperature;
+}
+
+header .hero-section .weather-highlight .degree-sign {
+  font-size: 3rem;
+  position: relative;
+  bottom: 25px;
+}
+
+header .details-section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: max-content auto;
+      grid-template-rows: -webkit-max-content auto;
+      grid-template-rows: max-content auto;
+  color: #e77123;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(237, 241, 242, 0.7)), to(rgba(237, 241, 242, 0.7)));
+  background: linear-gradient(rgba(237, 241, 242, 0.7), rgba(237, 241, 242, 0.7));
+  padding: 20px 40px;
+}
+
+header .details-section .location-options {
+  border-bottom: 1.5px solid #e77123;
+  padding-bottom: 50px;
+}
+
+header .details-section .location-options .search-bar {
+  margin-bottom: 30px;
+}
+
+header .details-section .location-options .search-bar form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto max-content;
+      grid-template-columns: auto -webkit-max-content;
+      grid-template-columns: auto max-content;
+}
+
+header .details-section .location-options .search-bar input {
+  width: 100%;
+  padding: 5px 5px 5px 0;
+  border: none;
+  background: transparent;
+  border-bottom: 1.5px solid #e77123;
+  outline: none;
+  color: #e77123;
+  font-size: 16px;
+}
+
+header .details-section .location-options .search-bar button {
+  background: transparent;
+  border: none;
+}
+
+header .details-section .location-options .search-bar button:hover {
+  cursor: pointer;
+}
+
+header .details-section .location-options .search-bar button img {
+  width: 20px;
+  height: auto;
+}
+
+header .details-section .location-options .options form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+  grid-row-gap: 10px;
+}
+
+header .details-section .location-options .options form button {
+  border: 0;
+  text-align: start;
+  background: none;
+  padding: 5px 5px 5px 0;
+  -webkit-transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+header .details-section .location-options .options form button:hover {
+  cursor: pointer;
+  background-color: #d14d00;
+  color: #ECF0F1;
+}
+
+header .details-section .weather-details {
+  padding-top: 30px;
+}
+
+header .details-section .weather-details .details-list {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  -ms-grid-columns: (max-content)[2];
+      grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(6, -webkit-max-content);
+  -ms-grid-rows: (max-content)[6];
+      grid-template-rows: repeat(6, max-content);
+  grid-column-gap: 150px;
+  grid-row-gap: 20px;
+  padding-top: 30px;
+}
+
+header .details-section .weather-details .details-list .second-column {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+/* PLACEHOLDER STYLES */
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #d14d00;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #d14d00;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #d14d00;
+}
+
+::placeholder {
+  /* Most modern browsers support this now. */
+  color: #d14d00;
+}
+
+/*-----------------------------------------------*/
+/* SECOND PAGE */
+/*-----------------------------------------------*/
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: map;
+}
+
+main #map-canvas {
+  margin: 0 auto;
+  width: 80vw;
+  height: 80vh;
+}
+
+main .gm-style-iw {
+  text-align: center;
+}
+
+/*-----------------------------------------------*/
+/* FOOTER */
+/*-----------------------------------------------*/
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: about;
+  margin-bottom: 50px;
+}
+
+footer a {
+  color: #d14d00;
+}
+
+/*
+font-family: 'Montserrat', sans-serif;
+
+font-weights: 400 Regular
+              500 Medium
+              600 Semi-bold
+*/
+/*# sourceMappingURL=styles.css.map */
