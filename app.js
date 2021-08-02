@@ -22,7 +22,7 @@ app.post("/", function(req, res) {
 
     var degreeUnit = "metric";
     const APIKey = process.env.OPEN_WEATHER_API_KEY;
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + degreeUnit + "&appid=" + APIKey;
+    const url = "//api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + degreeUnit + "&appid=" + APIKey;
 
     https.get(url, function (response) {
         if (response.statusCode == 404) {
