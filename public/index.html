@@ -9,23 +9,38 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <!--FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!--FAVICONS-->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/site.webmanifest">
-    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <meta name="msapplication-TileColor" content="#00aba9">
-    <meta name="msapplication-config" content="img/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/site.webmanifest" />
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="msapplication-config" content="img/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
     <title>Wezer</title>
   </head>
 
@@ -36,7 +51,9 @@
           <h2>Wezer</h2>
         </div>
         <div class="hint">
-          <h2 id="hintText">Enter city name in the search bar at the top right of the webpage</h2>
+          <h2 id="hintText">
+            Enter city name in the search bar at the top right of the webpage
+          </h2>
         </div>
         <div class="weather-highlight">
           <div class="temperature">
@@ -75,22 +92,30 @@
                 class="suggestion-button"
                 onclick="suggestionClicked(this.innerHTML)"
                 type="button"
-              >San Francisco</button>
+              >
+                San Francisco
+              </button>
               <button
                 class="suggestion-button"
                 onclick="suggestionClicked(this.innerHTML)"
                 type="button"
-              >London</button>
+              >
+                London
+              </button>
               <button
                 class="suggestion-button"
                 onclick="suggestionClicked(this.innerHTML)"
                 type="button"
-              >New York</button>
+              >
+                New York
+              </button>
               <button
                 class="suggestion-button"
                 onclick="suggestionClicked(this.innerHTML)"
                 type="button"
-              >Tokyo</button>
+              >
+                Tokyo
+              </button>
             </form>
           </div>
         </div>
@@ -141,10 +166,14 @@
       </div>
     </footer>
 
-      <!--GOOGLE MAPS-->
+    <!--GOOGLE MAPS-->
+
+    <!--Please replace the Google Maps API key with another key that you can get 
+      at "https://developers.google.com/maps/documentation/javascript/overview". 
+      The usage of the current API key is restricted to one domain only-->
     <script
-    type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3xnaz3VJgyMCc2G2VCCx35RVp92n3fU4"
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3xnaz3VJgyMCc2G2VCCx35RVp92n3fU4"
     ></script>
     <script src="index.js"></script>
   </body>
